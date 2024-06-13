@@ -1,0 +1,15 @@
+Instruções de instalação
+
+Necessário:
+Maven
+IntelliJ
+JDK 22
+MySQL
+
+Sobre o banco de dados, utilizar o usuario root com senha 1234, e executar o arquivo "bancos e tabelas.sql" par criar o banco e as tabelas.
+
+Para executar o Server, rodar o arquivo abaixo:
+\PortalVagasServer\src\main\java\server\ServidorSocket.java
+
+Para executar o Client, rodar o arquivo abaixo:
+C:\Users\tatia\IdeaProjects\PortalVagasClient\src\main\java\vagas\portalvagasclient\Main.java
