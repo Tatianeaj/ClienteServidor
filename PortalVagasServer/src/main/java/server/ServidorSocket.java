@@ -21,12 +21,6 @@ public class ServidorSocket {
 
     public static void main(String[] args) {
 
-       // try (Connection conn = DriverManager.getConnection(URL, USUARIO_BD, SENHA_BD)) {
-         //   System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
-        //} catch (SQLException e) {
-          //  System.err.println("Erro ao conectar ao banco de dados: " + e.getMessage());
-            //return;
-       // }
 
         Connection conn = null;
         try {
@@ -193,12 +187,8 @@ public class ServidorSocket {
 
                     processarMensagem(mensagemDoCliente, out);
 
-                    //if (mensagemDoCliente.equalsIgnoreCase("sair")) {
-                      //  System.out.println("Saindo... ");
-
-                        //clienteSocket.close();
-                        //break;
-                    //}
+                   
+                  
                 }
 
                 clienteSocket.close();
