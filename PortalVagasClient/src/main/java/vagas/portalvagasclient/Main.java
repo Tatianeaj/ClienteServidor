@@ -89,36 +89,35 @@ public class Main {
                         visualizarCandidato(saida, teclado, entrada);
                         break;
                     case "2":
-                        //     cadastrarCandidato(saida, teclado);
+                      
                         cadastrarCompetenciaExperiencia(saida, teclado, entrada);
                         break;
                     case "3":
                         visualizarCompetenciaExperiencia(saida, teclado, entrada);
                         break;
-                    //   loginCandidato(saida, teclado, entrada);
+                   
                     case "4":
                         atualizarCompetenciaExperiencia(saida, teclado, entrada);
                         break;
-                    // atualizarCandidato(saida, teclado);
+                
                     case "5":
                         apagarCompetenciaExperiencia(saida, teclado, entrada);
-                        //apagarCandidato(saida, teclado);
+                        
                         break;
                     case "6":
                         atualizarCandidato(saida, teclado, entrada);
-                        //apagarCandidato(saida, teclado);
+                      
                         break;
                     case "7":
                         apagarCandidato(saida, teclado, entrada);
-                        //System.out.println("Saindo...");
-                        //System.exit(0);
+                       
                         break;
                     case "8":
                         listarVagas(saida, teclado, entrada);
                         break;
                     case "9":
                         isLoggedIn = false;
-                        //userType = "0";
+                        
                         logout(saida, entrada);
 
                         break;
@@ -155,19 +154,19 @@ public class Main {
                      visualizarEmpresa(saida, teclado, entrada);
                      break;
                  case "2":
-                     //cadastrarEmpresa(saida, teclado);
+                     
                      cadastrarVaga(saida, teclado, entrada);
                      break;
                  case "3":
-                     //loginEmpresa(saida, teclado, entrada);
+                     
                      visualizarVaga(saida, teclado, entrada);
                      break;
                  case "4":
-                     //atualizarEmpresa(saida, teclado);
+                    
                      atualizarVaga(saida, teclado, entrada);
                      break;
                  case "5":
-                     //apagarEmpresa(saida, teclado);
+                    
                      apagarVaga(saida, teclado, entrada);
                      break;
                  case "6":
@@ -184,7 +183,7 @@ public class Main {
                      break;
                  case "10":
                      isLoggedIn = false;
-                     //userType = "0";
+                    
                      logout(saida, entrada);
                      break;
                  default:
@@ -194,29 +193,8 @@ public class Main {
          }
 
 
-     }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     }
+    }
 
 
 
@@ -248,7 +226,7 @@ public class Main {
             if (userType.equals("1")) {
                 try {
                     System.out.println("Escolha [1] para fazer login ou [2] para se cadastrar como candidato:");
-                    // while ((opcao = teclado.readLine()) != null) {
+                   
                     opcao = teclado.readLine();
                     switch (opcao) {
                         case "1":
@@ -269,7 +247,7 @@ public class Main {
             } else if (userType.equals("2")) {
                 try {
                     System.out.println("Escolha [1] para fazer login ou [2] para se cadastrar como empresa:");
-                    //  while ((opcao = teclado.readLine()) != null) {
+                    
                     opcao = teclado.readLine();
                     switch (opcao) {
                         case "1":
@@ -298,21 +276,7 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        // System.out.println("Conectado ao servidor. Digite uma opção:");
-        // System.out.println("1. Consultar empresa");
-        //System.out.println("2. Cadastrar empresa");
-        //System.out.println("3. Login");
-        //System.out.println("4. Atualizar empresa");
-        //System.out.println("5. Apagar empresa");
-        //System.out.println("6. Logout");
-        //System.out.println("7. Sair");
-        // Adicione aqui as opções do menu para empresas
-
-
-        //String opcao;
-        // if (userType.equals("1")) {
-
-
+      
     }
 
 
@@ -343,19 +307,12 @@ public class Main {
         JsonObject respostaJson = JsonParser.parseString(resposta).getAsJsonObject();
         String status = respostaJson.get("status").getAsString();
         if ("201".equals(status)) {
-            // Após um cadastro bem-sucedido, faça login automaticamente
+           
             loginCandidato(saida, teclado, entrada);
         } else {
             System.out.println("Erro ao cadastrar candidato." + respostaJson.get("mensagem").getAsString());
         }
 
-        //JsonObject respostaJson = JsonParser.parseString(resposta).getAsJsonObject();
-        //String status = respostaJson.get("status").getAsString();
-        //if ("201".equals(status)) {
-        //  loginCandidatoAuto(saida, entrada, email, senha);
-        //}// else {
-        // System.out.println("Erro ao cadastrar candidato." + respostaJson.get("mensagem").getAsString());
-        //}
     }
 
 
@@ -390,7 +347,7 @@ public class Main {
         JsonObject respostaJson = JsonParser.parseString(resposta).getAsJsonObject();
         String status = respostaJson.get("status").getAsString();
         if ("201".equals(status)) {
-            // Após um cadastro bem-sucedido, faça login automaticamente
+           
             loginEmpresa(saida, teclado, entrada);
         } else {
             System.out.println("Erro ao cadastrar empresa." + respostaJson.get("mensagem").getAsString());
@@ -400,7 +357,7 @@ public class Main {
 
 
     private static void cadastrarCompetenciaExperiencia(PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws IOException {
-        //System.out.println("Digite o email do usuário:");
+       
         String email = UserSession.getInstance(null, null).getEmail();
         String token = UserSession.getInstance(null, null).getToken();
 
@@ -438,7 +395,7 @@ public class Main {
     }
 
     private static void cadastrarVaga(PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws IOException {
-        //System.out.println("Digite o email da empresa:");
+     
         String email = UserSession.getInstance(null, null).getEmail();
         String token = UserSession.getInstance(null, null).getToken();
 
@@ -491,10 +448,9 @@ public class Main {
         menuEmpresa(saida, teclado, entrada);
     }
 
-    //
+    
     private static void visualizarCandidato(PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws IOException {
-        //System.out.println("Digite o email do usuário:");
-        //String email = teclado.readLine();
+      
         String email = UserSession.getInstance(null, null).getEmail();
         String token = UserSession.getInstance(null, null).getToken();
 
@@ -509,7 +465,7 @@ public class Main {
     }
 
     private static void visualizarVaga(PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws IOException {
-        //System.out.println("Digite o email da empresa:");
+      
         String email = UserSession.getInstance(null, null).getEmail();
         String token = UserSession.getInstance(null, null).getToken();
 
@@ -530,7 +486,7 @@ public class Main {
     }
 
     private static void visualizarCompetenciaExperiencia(PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws IOException {
-        //System.out.println("Digite o email do usuário:");
+        
         String email = UserSession.getInstance(null, null).getEmail();
         String token = UserSession.getInstance(null, null).getToken();
 
@@ -547,8 +503,7 @@ public class Main {
 
 
     private static void visualizarEmpresa(PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws IOException {
-        // System.out.println("Digite o email da empresa:");
-        // String email = teclado.readLine();
+       
         String email = UserSession.getInstance(null, null).getEmail();
         String token = UserSession.getInstance(null, null).getToken();
 
@@ -589,7 +544,7 @@ public class Main {
             while (isLoggedIn)
             {
 
-                // System.out.println("Conectado ao servidor. Digite uma opção:");
+               
                 System.out.println("1. Meus Dados(Consultar candidato)");
                 System.out.println("2. Cadastrar competencias/experiências");
                 System.out.println("3. Consultar minhas competencias/experiências");
@@ -599,8 +554,7 @@ public class Main {
                 System.out.println("7. Deletar meu cadastro(Apagar candidato)");
                 System.out.println("8. Pesquisa filtrada");
                 System.out.println("9. Logout ");
-                //System.out.println("7. Sair");
-
+               
                 String opcao = teclado.readLine();
                 while ((opcao = teclado.readLine()) != null) {
                     switch (opcao) {
@@ -608,36 +562,35 @@ public class Main {
                             visualizarCandidato(saida, teclado, entrada);
                             break;
                         case "2":
-                            //     cadastrarCandidato(saida, teclado);
+                           
                             cadastrarCompetenciaExperiencia(saida, teclado, entrada);
                             break;
                         case "3":
                             visualizarCompetenciaExperiencia(saida, teclado, entrada);
                             break;
-                        //   loginCandidato(saida, teclado, entrada);
+                        
                         case "4":
                             atualizarCompetenciaExperiencia(saida, teclado, entrada);
                             break;
-                        // atualizarCandidato(saida, teclado);
+                       
                         case "5":
                             apagarCompetenciaExperiencia(saida, teclado, entrada);
-                            //apagarCandidato(saida, teclado);
+                            
                             break;
                         case "6":
                             atualizarCandidato(saida, teclado, entrada);
-                            //apagarCandidato(saida, teclado);
+                            
                             break;
                         case "7":
                             apagarCandidato(saida, teclado, entrada);
-                            //System.out.println("Saindo...");
-                            //System.exit(0);
+                           
                             break;
                         case "8":
                             listarVagas(saida, teclado, entrada);
                             break;
                         case "9":
                             isLoggedIn = false;
-                            //userType = "0";
+                          
                             logout(saida, entrada);
 
                             break;
@@ -662,32 +615,6 @@ public class Main {
 
             saida.flush();
 
-
-
-        //private static boolean loginCandidatoAuto(PrintWriter saida, BufferedReader entrada, String email, String senha) throws IOException {
-        //  saida.println(criarMensagemJSON("operacao", "loginCandidato", "email", email, "senha", senha));
-        // System.out.println("Dados enviados: " + criarMensagemJSON("operacao", "loginCandidato", "email", email, "senha", senha));
-
-        //String resposta = entrada.readLine();
-        //System.out.println("Resposta do servidor: " + resposta);
-
-        //JsonObject respostaJson = JsonParser.parseString(resposta).getAsJsonObject();
-
-        //String status = respostaJson.get("status").getAsString();
-        //String token = respostaJson.get("token").getAsString();
-        //if ("200".equals(status)) {
-        //  UserSession session = UserSession.getInstance(token, email);
-        //isLoggedIn = true;
-        //System.out.println("Login bem sucedido, email:" + email + " token:" + token);
-        //return true;
-        //} else {
-        //  System.out.println("Erro ao fazer login." + respostaJson.get("mensagem").getAsString());
-        //  return false;
-        //}
-        //saida.flush();
-        //return false;
-        // }
-
     }
         private static void loginEmpresa (PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws
         IOException {
@@ -702,8 +629,6 @@ public class Main {
             String resposta = entrada.readLine();
             System.out.println("Resposta do servidor: " + resposta);
 
-            //isLoggedIn = true;
-
 
             JsonObject respostaJson = JsonParser.parseString(resposta).getAsJsonObject();
             String status = respostaJson.get("status").getAsString();
@@ -714,7 +639,7 @@ public class Main {
                 System.out.println("Login bem sucedido, email:" + email + " token:" + token);
                 while (isLoggedIn)
                 {
-                //aqui
+               
                     System.out.println("1. Meus Dados(Consultar empresa)");
                     System.out.println("2. Cadastrar vagas");
                     System.out.println("3. Consultar minhas vagas");
@@ -733,19 +658,19 @@ public class Main {
                                 visualizarEmpresa(saida, teclado, entrada);
                                 break;
                             case "2":
-                                //cadastrarEmpresa(saida, teclado);
+                              
                                 cadastrarVaga(saida, teclado, entrada);
                                 break;
                             case "3":
-                                //loginEmpresa(saida, teclado, entrada);
+                               
                                 visualizarVaga(saida, teclado, entrada);
                                 break;
                             case "4":
-                                //atualizarEmpresa(saida, teclado);
+                               
                                 atualizarVaga(saida, teclado, entrada);
                                 break;
                             case "5":
-                                //apagarEmpresa(saida, teclado);
+                               
                                 apagarVaga(saida, teclado, entrada);
                                 break;
                             case "6":
@@ -762,20 +687,22 @@ public class Main {
                                 break;
                             case "10":
                                 isLoggedIn = false;
-                                //userType = "0";
+                               
                                 logout(saida, entrada);
                                 break;
                             default:
                                 System.out.println("Opção inválida. Digite novamente.");
                         }
 
-                        // saida.flush();
+                       
 
                       resposta = entrada.readLine();
                         System.out.println("Resposta do servidor: " + resposta);
                     }
 
-                }} else{
+                }
+            }
+            else{
                     System.out.println("Erro ao fazer login." + respostaJson.get("mensagem").getAsString());
                 }
 
@@ -863,7 +790,7 @@ public class Main {
 
             private static void atualizarCompetenciaExperiencia (PrintWriter saida, BufferedReader
             teclado, BufferedReader entrada) throws IOException {
-                //System.out.println("Digite o email do usuário:");
+               
                 visualizarCompetenciaExperiencia(saida, teclado, entrada);
 
                 String email = UserSession.getInstance(null, null).getEmail();
@@ -903,7 +830,7 @@ public class Main {
 
             private static void atualizarVaga (PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws
             IOException {
-                //System.out.println("Digite o email da empresa:");
+                
                 String email = UserSession.getInstance(null, null).getEmail();
                 String token = UserSession.getInstance(null, null).getToken();
                 System.out.println("Digite o titulo da vaga:");
@@ -961,10 +888,7 @@ public class Main {
                 String token = UserSession.getInstance(null, null).getToken();
 
                 String email = UserSession.getInstance(null, null).getEmail();
-                //System.out.println("Digite o nome de nome:");
-                //String usuario = teclado.readLine();
-                //System.out.println("Digite a senha:");
-                //String senha = teclado.readLine();
+               
                 saida.println(criarMensagemJSON("operacao", "apagarCandidato", "email", email, "token", token));
                 System.out.println("Dados enviados: " + criarMensagemJSON("operacao", "apagarCandidato", "email", email, "token", token));
                 saida.flush();
@@ -985,9 +909,7 @@ public class Main {
 
             private static void apagarVaga (PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws
             IOException {
-                //System.out.println("Digite o nome de nome:");
-                //String usuario = teclado.readLine();
-
+             
                 String token = UserSession.getInstance(null, null).getToken();
                 String email = UserSession.getInstance(null, null).getEmail();
 
@@ -1030,7 +952,7 @@ public class Main {
 
             private static void apagarCompetenciaExperiencia (PrintWriter saida, BufferedReader teclado, BufferedReader
             entrada) throws IOException {
-                //System.out.println("Digite o email do usuário:");
+               
                 String email = UserSession.getInstance(null, null).getEmail();
                 String token = UserSession.getInstance(null, null).getToken();
 
@@ -1065,13 +987,12 @@ public class Main {
                 String resposta = entrada.readLine();
                 System.out.println("Resposta do servidor: " + resposta);
 
-             //   menuEmpresa(saida, teclado, entrada);
             }
 
             private static void filtrarVagas (PrintWriter saida, BufferedReader teclado, BufferedReader entrada) throws
             IOException {
                 String token = UserSession.getInstance(null, null).getToken();
-                // String email = UserSession.getInstance(null, null).getEmail();
+                
                 System.out.println("Digite o tipo de filtro OU/E:");
                 String tipo = teclado.readLine();
 
